@@ -1,9 +1,17 @@
 const db = require("../models");
+const apmserver = require('../../server.js')
+// const agent  = require('elastic-apm-node/start')
 const Tutorial = db.tutorials;
+
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
   // Validate request
+
+  console.log(apmserver.apmserver.currentTransaction.traceId) //get traceId
+  // let traceId = res.get('X-Elastic-APM-Transaction-Id')
+  // console.log('traceId',traceId)
+  // agent.apm.startTransaction('node-trasaction',{childOf:traceId})
   if (!req.body.title) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
