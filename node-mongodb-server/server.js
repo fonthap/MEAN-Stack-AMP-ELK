@@ -2,14 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const apmserver = require('elastic-apm-node').start({
   serviceName: 'express-app',
-  secretToken: 'secret',
-  serverUrl: 'http://192.168.10.31:8200',
-  // logLevel: 'debug',
-  captureHeaders: true,
-  captureBody:true,
-  distributedTracing:true,
-  distributedTracingOrigins:["http://localhost:4200","http://localhost:8080"],
-  usePathAsTransactionName:true,
+  secretToken: 'supersecrettoken',
+  serverUrl: 'http://localhost:8200',
+  environment:"development",
+  logLevel: 'debug',
 })
 
 module.exports = {apmserver}

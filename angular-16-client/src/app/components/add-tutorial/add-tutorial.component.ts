@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Tutorial } from 'src/app/models/tutorial.model';
 import { TutorialService } from 'src/app/services/tutorial.service';
+import { apm } from "@elastic/apm-rum";
 
 @Component({
   selector: 'app-add-tutorial',
@@ -25,7 +26,8 @@ export class AddTutorialComponent {
 
     this.tutorialService.create(data).subscribe({
       next: (res) => {
-        console.log(res);
+        console.log("ID",apm.getCurrentTransaction());
+        // console.log(res);
         this.submitted = true;
       },
       error: (e) => console.error(e)

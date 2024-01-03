@@ -23,7 +23,6 @@ export class TutorialsListComponent {
     this.tutorialService.getAll().subscribe({
       next: (data) => {
         this.tutorials = data;
-        console.log(data);
       },
       error: (e) => console.error(e)
     });

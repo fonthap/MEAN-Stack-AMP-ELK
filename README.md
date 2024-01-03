@@ -7,7 +7,7 @@ We will build a full-stack Tutorial Application in that:
 - User can create, retrieve, update, delete Tutorials.
 - There is a search box for finding Tutorials by title.
 
-![mean-stack-crud-example-angular-16](mean-stack-crud-example-angular-16.png)
+![mean-stack-crud-example-angular-16](/img/mean-stack-crud-example-angular-16.png)
 
 Tutorial link: 
 
@@ -45,3 +45,34 @@ cd angular-16-client
 npm install
 ```
 Run `ng serve --port 8081`. Navigate to `http://localhost:8081/`.
+
+### ELK Setup
+>docker-compose up
+
+Kibana UI https://localhost:5601
+
+>[APM](https://www.elastic.co/blog/getting-started-with-the-elastic-stack-and-docker-compose-part-2)
+
+![Alt text](/img//image.png)
+
+![Alt text](/img//image-1.png)
+
+![Alt text](/img//image-2.png)
+
+>https://es01:9200
+
+>docker cp es-cluster-es01-1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/.
+
+>openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
+
+>cat /tmp/ca.crt
+
+```
+ssl:    
+    certificate_authorities:
+    - |
+        -----BEGIN CERTIFICATE-----
+        ////change this////
+        -----END CERTIFICATE-----
+```
+![Alt text](/img//image-3.png)
