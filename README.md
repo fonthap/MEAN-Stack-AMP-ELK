@@ -47,7 +47,9 @@ npm install
 Run `ng serve --port 8081`. Navigate to `http://localhost:8081/`.
 
 ### ELK Setup
->docker-compose up
+```
+docker-compose up
+```
 
 Kibana UI https://localhost:5601
 
@@ -59,13 +61,17 @@ Kibana UI https://localhost:5601
 
 ![Alt text](/img//image-2.png)
 
->https://es01:9200
+`https://es01:9200`
 
->docker cp es-cluster-es01-1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/.
-
->openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
-
->cat /tmp/ca.crt
+```
+docker cp es-cluster-es01-1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/.
+```
+```
+openssl x509 -fingerprint -sha256 -noout -in /tmp/ca.crt | awk -F"=" {' print $2 '} | sed s/://g
+```
+``` 
+cat /tmp/ca.crt
+```
 
 ```
 ssl:    
